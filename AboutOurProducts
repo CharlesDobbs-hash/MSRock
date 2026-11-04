@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>About Our Products - MandS Rock</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.typekit.net/puc1zbw.css">
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js"></script>
+    </head>
+
+    <body class="d-flex flex-column min-vh-100">
+
+        <!-- HEADER -->
+        <header>
+            <div class="container-fluid">
+                <div class="row align-items-center text-center">
+                    <div class="col-3">
+                        <img src="Logo%20w%20background%20no%20o%20but%20use.png" alt="M&amp;S Rock logo" class="logo" />
+                    </div>
+                    <div class="col-5">
+                        <div class="site-name">MS Rock</div>
+                        <div class="tagline">Unique Products for Unique People</div>
+                    </div>
+                    <div class="col-2 nav-text">
+                        <a href="login.html">Log in/Sign Up</a>
+                    </div>
+                    <div class="col-2">
+                        <a href="cart.html"><img src="shopping-cart-o.gif" alt="Shopping cart" class="cart" /></a>
+                    </div>
+                </div>
+
+                <nav class="d-flex justify-content-around nav-text pb-1">
+                    <a href="index.html">Home</a>
+                    <a href="About%20Us.html">About Us</a>
+                    <a href="AboutOurProducts.html" class="font-weight-bold">About Our Products</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- BODY -->
+        <main class="flex-grow-1 pt-3 pb-4">
+            <div class="container-fluid">
+
+                <!-- Row 1: video placeholder on the left, first block of text on its right -->
+                <div class="row align-items-center mb-4">
+                    <div class="col-md-7">
+                        <!-- Video placeholder: replace the inner box with the real video later -->
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <div class="embed-responsive-item video-placeholder d-flex align-items-center justify-content-center">
+                                Video coming soon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 product-text">
+                        <p class="mb-0">
+                            Our products start out as unremarkable rocks. Our practiced eyes can see
+                            the beauty they will become. It does take a lot of work to get them to
+                            resemble our vision. They are cut, polished, burnished, drilled, and
+                            mounted. The process can take from four to eight weeks. It is a lot of
+                            work, but it is done with the love of creating unique pieces.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 2: second block of text (moved to the right), with Workshop.gif on its right -->
+                <div class="row align-items-center">
+                    <div class="col-md-5 offset-md-2 product-text">
+                        <p class="mb-0">
+                            We started out as rock hounds, traveling all over the West looking for
+                            unusual stones for our garden. Once our garden was full, we started
+                            looking for other ways to use our collection. What started as a small
+                            rock shop has grown into a large shed with a multitude of tools to bring
+                            out the hidden beauty of nature's bounty.
+                        </p>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="Rocky%20Repair%20Workshop%20Moment.png" alt="Our workshop" class="d-block mx-auto img-fluid" />
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container-fluid py-2">
+                <div class="row align-items-center">
+                    <div class="col-md-4 nav-text">
+                        PO Box 116<br />
+                        Circleville, UT 84723<br />
+                        <a href="mailto:msrockut@gmail.com">msrockut@gmail.com</a>
+                    </div>
+                    <div class="col-md-4 text-center">Copyright 2026</div>
+                    <div class="col-md-4 text-md-right social-icons">
+                        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" aria-label="Facebook" class="ml-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="TikTok" class="ml-2"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>
