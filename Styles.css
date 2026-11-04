@@ -1,0 +1,251 @@
+/* Header and footer: blue background, white text */
+header,
+footer {
+    background-color: #4870D5;
+    color: #ffffff;
+}
+
+header a,
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header a:hover,
+footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Black lines between header/body and body/footer */
+header {
+    border-bottom: 3px solid #000000;
+}
+
+footer {
+    border-top: 3px solid #000000;
+}
+
+/* Header images */
+.logo {
+    width: 130px;
+    height: 130px;
+}
+
+.cart {
+    width: 96px;
+    height: 96px;
+}
+
+/* "MS Rock" title and tagline */
+.site-name {
+    font-family: "hotsy-totsy-mvb", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.8rem;
+    line-height: 1;
+}
+
+.tagline {
+    font-size: 1.5rem;
+}
+
+/* Medium-size text for the login link, menu, and address */
+.nav-text {
+    font-size: 1.25rem;
+}
+
+/* Main body area: tiled background */
+main {
+    background: url("Background-o.gif");
+    min-height: 520px;
+}
+
+/* Top part of the page: the rock guy is positioned inside this box */
+.hero {
+    position: relative;
+    min-height: 400px;
+}
+
+.hero h1,
+.hero p {
+    text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff;
+}
+
+/* Welcome heading */
+.hero h1 {
+    font-size: 4rem;
+}
+
+/* Welcome paragraph: narrow block centered on the page */
+.hero p {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Rock guy: centered between the left edge of the page and the start of the text */
+.rock-guy {
+    position: absolute;
+    top: 0;
+    left: calc(25% - 125px);
+    transform: translateX(-50%);
+    width: min(400px, calc(50vw - 270px));
+}
+
+/* Rock girl: centered between the end of the text and the right edge of the page */
+.rock-girl {
+    position: absolute;
+    top: 44px;
+    left: calc(75% + 125px);
+    transform: translateX(-50%);
+    width: min(300px, calc((50vw - 270px) * 0.75));
+}
+
+/* Product carousel: room for the arrows, blue arrows and dots */
+.carousel {
+    padding: 0 50px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+    bottom: 40px;
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #4870D5;
+    background-size: 50%;
+    border-radius: 50%;
+}
+
+.carousel-indicators {
+    position: static;
+    margin: 10px 0 0 0;
+}
+
+.carousel-indicators li {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    border: 0;
+    border-radius: 50%;
+    background-color: #4870D5;
+}
+
+/* Footer social icons */
+.social-icons {
+    font-size: 2.5rem;
+}
+
+/* On phones, the rock guy and rock girl sit side by side under the text */
+@media (max-width: 767px) {
+    .hero {
+        min-height: 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+    }
+
+    .rock-guy,
+    .rock-girl {
+        .rock-girl {width: 83px;
+}
+        position: static;
+        transform: none;
+        display: inline-block;
+        width: 110px;
+        margin: 10px 8px 0 8px;
+    }
+}
+
+/* ---------- About Us page ---------- */
+
+/* Lets the rock couple be placed in the lower right corner of the main area */
+.about-page {
+    position: relative;
+}
+
+/* Photo of Mike and Sheila: fills the left side, 24px (about 1/4 inch) below the header and above the footer */
+.about-photo {
+    position: absolute;
+    top: 24px;
+    left: 20.8333%;
+    transform: translateX(-50%);
+    height: calc(100% - 48px);
+    max-width: calc((41.6667vw - 30px) / 0.74);
+    object-fit: contain;
+}
+
+/* Story text on the right, in Arial */
+.about-text {
+    font-family: Arial, sans-serif;
+    font-size: 2.05rem;
+    text-align: left;
+    padding-top: 8px;
+    padding-bottom: 180px; /* leaves room for the rock couple below the text */
+    text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff;
+}
+
+/* Rock guy and gal holding hands, lower right corner */
+.rock-couple {
+    position: absolute;
+    bottom: -50px;
+    right: 392px;
+    width: 287px;
+}
+
+/* On phones, stack everything: photo, text, then the rock couple at the bottom */
+@media (max-width: 767px) {
+    .about-photo {
+        position: static;
+        transform: none;
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        padding-bottom: 0;
+        font-size: 1.25rem;
+    }
+
+    .rock-couple {
+        position: static;
+        display: block;
+        margin: 10px auto 0 auto;
+        width: 240px;
+    }
+}
+/* ---------- About Our Products page ---------- */
+
+/* Text blocks: Arial, left aligned, with a white glow so they read well over the pattern */
+.product-text {
+    font-family: Arial, sans-serif;
+    font-size: 1.75rem;
+    text-align: left;
+    text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff;
+}
+
+/* Video placeholder box */
+.video-placeholder {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 4px dashed #4870D5;
+    border-radius: 10px;
+    color: #4870D5;
+    font-family: Arial, sans-serif;
+    font-size: 1.75rem;
+    font-weight: bold;
+}
