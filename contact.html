@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Contact Us - MandS Rock</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.typekit.net/puc1zbw.css">
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js"></script>
+    </head>
+
+    <body class="d-flex flex-column min-vh-100">
+
+        <!-- HEADER -->
+        <header>
+            <div class="container-fluid">
+                <div class="row align-items-center text-center">
+                    <div class="col-3">
+                        <img src="Logo%20w%20background%20no%20o%20but%20use.png" alt="M&amp;S Rock logo" class="logo" />
+                    </div>
+                    <div class="col-5">
+                        <div class="site-name">MS Rock</div>
+                        <div class="tagline">Unique Products for Unique People</div>
+                    </div>
+                    <div class="col-2 nav-text">
+                        <a href="login.html">Log in/Sign Up</a>
+                    </div>
+                    <div class="col-2">
+                        <a href="cart.html"><img src="shopping-cart-o.gif" alt="Shopping cart" class="cart" /></a>
+                    </div>
+                </div>
+
+                <nav class="d-flex justify-content-around nav-text pb-1">
+                    <a href="index.html">Home</a>
+                    <a href="aboutus.html">About Us</a>
+                    <a href="AboutOurProducts.html">About Our Products</a>
+                    <a href="contact.html" class="font-weight-bold">Contact Us</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- BODY -->
+        <main class="flex-grow-1 py-4">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!-- Left side: Rocky on the phone -->
+                    <div class="col-md-3 contact-photo-col mb-4 mb-md-0">
+                        <img src="Rocky-Phone-01.gif" alt="Rock guy talking on the phone in his workshop" class="contact-photo" />
+                    </div>
+
+                    <!-- Center: heading and contact form -->
+                    <div class="col-md-6 contact-form">
+                        <h2 class="contact-heading">
+                            Have a Question? Send us a message and we&rsquo;ll get back to you within 24 hours.
+                        </h2>
+
+                        <!-- Replace the action address below with your form service's address (see notes) -->
+                        <form action="mailto:msrockut@gmail.com/f/YOUR_FORM_ID" method="POST">
+
+                            <label for="name" class="sr-only">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required />
+
+                            <label for="email" class="sr-only">Your Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Your Email Address" required />
+
+                            <label for="message" class="sr-only">Your Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+
+                            <button type="submit" class="btn contact-button">Send Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Right side: Rocky Gal on the phone -->
+                    <div class="col-md-3 contact-photo-col mt-4 mt-md-0">
+                        <img src="Rocky-Phone-02.gif" alt="Rock girl talking on the phone in her living room" class="contact-photo" />
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container-fluid py-2">
+                <div class="row align-items-center">
+                    <div class="col-md-4 nav-text">
+                        PO Box 116<br />
+                        Circleville, UT 84723<br />
+                        <a href="mailto:msrockut@gmail.com">msrockut@gmail.com</a>
+                    </div>
+                    <div class="col-md-4 text-center">Copyright 2026</div>
+                    <div class="col-md-4 text-md-right social-icons">
+                        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" aria-label="Facebook" class="ml-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="TikTok" class="ml-2"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>
