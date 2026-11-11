@@ -57,7 +57,7 @@ footer {
 
 /* Main body area: tiled background */
 main {
-    background: url("Background adjusted.png");
+    background: url("Background-o.gif");
     min-height: 520px;
 }
 
@@ -200,9 +200,9 @@ main {
 /* Rock guy and gal holding hands, lower right corner */
 .rock-couple {
     position: absolute;
-    bottom: -50px;
-    right: 392px;
-    width: 287px;
+    bottom: -86px;
+    right: 234px;
+    width: 317px;
 }
 
 /* On phones, stack everything: photo, text, then the rock couple at the bottom */
@@ -248,4 +248,148 @@ main {
     font-family: Arial, sans-serif;
     font-size: 1.75rem;
     font-weight: bold;
+}
+/* ---------- Contact Us page ---------- */
+
+.contact-heading {
+    font-family: Arial, sans-serif;
+    font-size: 2.25rem;
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff;
+}
+
+/* Blue boxes for the name, email, and message */
+.contact-form .form-control {
+    background-color: #6AAFE0;
+    border: 0;
+    border-radius: 0;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    height: auto;
+    margin-bottom: 2.5rem;
+}
+
+.contact-form .form-control::placeholder {
+    color: #000000;
+    opacity: 1;
+}
+
+.contact-form textarea.form-control {
+    resize: vertical;
+}
+
+/* Send button */
+.contact-button {
+    background-color: #4870D5;
+    border-radius: 0;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 1.75rem;
+    padding: 0.4rem 2rem;
+}
+
+.contact-button:hover {
+    background-color: #3a5cb5;
+    color: #ffffff;
+}
+/* Rocky Phone pictures: fill the whole column, from top to bottom */
+.contact-photo-col {
+    position: relative;
+}
+
+.contact-photo {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: calc(86% - 0px);
+    height: 100%;
+    object-fit: cover;
+}
+
+/* On phones, show the pictures at a normal size, one above the other */
+@media (max-width: 767px) {
+    .contact-photo {
+        position: static;
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+/* ---------- Log In / Sign Up page ---------- */
+
+.club-form {
+    text-align: center;
+}
+
+/* Thin blue line between the two halves */
+.club-divider {
+    border-right: 3px solid #4870D5;
+}
+
+.club-heading {
+    font-family: Arial, sans-serif;
+    font-size: 2.25rem;
+    font-weight: normal;
+    text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff;
+}
+
+.club-subheading {
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff;
+}
+
+.club-form form {
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.club-form .form-control {
+    background-color: #C2D3FF;
+    border: 1px solid #9DB4F0;
+    border-radius: 0;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.club-form .form-control::placeholder {
+    color: #000000;
+    opacity: 1;
+}
+
+.club-picture {
+    display: block;
+    width: 382px;
+    max-width: 100%;
+    margin: 1.5rem auto;
+}
+
+.club-button {
+    background-color: #4870D5;
+    border-radius: 25px;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    padding: 0.2rem 3rem;
+    margin-top: 1rem;
+}
+
+.club-button:hover {
+    background-color: #3a5cb5;
+    color: #ffffff;
+}
+
+/* On phones, the two forms stack, so the divider goes underneath instead */
+@media (max-width: 767px) {
+    .club-divider {
+        border-right: 0;
+        border-bottom: 2px solid #4870D5;
+    }
 }
