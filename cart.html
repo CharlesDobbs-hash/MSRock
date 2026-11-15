@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Your Cart - MandS Rock</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.typekit.net/puc1zbw.css">
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js"></script>
+    </head>
+
+    <body class="d-flex flex-column min-vh-100">
+
+        <!-- HEADER -->
+        <header>
+            <div class="container-fluid">
+                <div class="row align-items-center text-center">
+                    <div class="col-3">
+                        <img src="Logo%20w%20background%20no%20o%20but%20use.png" alt="M&amp;S Rock logo" class="logo" />
+                    </div>
+                    <div class="col-5">
+                        <div class="site-name">MS Rock</div>
+                        <div class="tagline">Unique Products for Unique People</div>
+                    </div>
+                    <div class="col-2 nav-text">
+                        <a href="login.html">Log in/Sign Up</a>
+                    </div>
+                    <div class="col-2">
+                        <!-- On this page the cart picture is the gold version -->
+                        <a href="cart.html"><img src="shopping-cart-gold.gif" alt="Shopping cart (you are here)" class="cart" /></a>
+                    </div>
+                </div>
+
+                <nav class="d-flex justify-content-around nav-text pb-1">
+                    <a href="index.html">Home</a>
+                    <a href="About%20Us.html">About Us</a>
+                    <a href="AboutOurProducts.html">About Our Products</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- BODY: the page grows taller as items are added, and the browser's scroll bar appears on the right edge -->
+        <main class="flex-grow-1 d-flex flex-column pt-4 pb-3">
+
+            <div class="container-fluid flex-grow-1">
+                <!-- The items are added here by the script at the bottom of the page -->
+                <div id="cartItems"></div>
+                <p id="cartEmpty" class="cart-empty" hidden>Your cart is empty.</p>
+                <img src="Cart-Pic.gif" alt="Rock guy and rock girl carrying shopping bags" class="cart-pic" />
+            </div>
+
+            <div class="text-center mt-3">
+                <a href="yourorder.html" id="checkoutButton" class="btn checkout-button" hidden>Checkout</a>
+            </div>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container-fluid py-2">
+                <div class="row align-items-center">
+                    <div class="col-md-4 nav-text">
+                        PO Box 116<br />
+                        Circleville, UT 84723<br />
+                        <a href="mailto:msrockut@gmail.com">msrockut@gmail.com</a>
+                    </div>
+                    <div class="col-md-4 text-center">Copyright 2026</div>
+                    <div class="col-md-4 text-md-right social-icons">
+                        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" aria-label="Facebook" class="ml-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="TikTok" class="ml-2"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // The cart is read from the same place the product pages saved it
+            var CART_KEY = "msrockCart";
+
+            function getCart() {
+                try {
+                    return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+                } catch (error) {
+                    return [];
+                }
+            }
+
+            // Turns a number like 12 into "$12.00"
+            function money(amount) {
+                return "$" + amount.toFixed(2);
+            }
+
+            var cart = getCart();
+            var itemsBox = document.getElementById("cartItems");
+            var runningTotal = 0;
+
+            if (cart.length === 0) {
+                // Nothing in the cart yet: show the message and keep the checkout button hidden
+                document.getElementById("cartEmpty").hidden = false;
+            } else {
+                document.getElementById("checkoutButton").hidden = false;
+
+                // One row per item: picture on the left, price in the middle, running total on the right
+                cart.forEach(function (item) {
+                    runningTotal += Number(item.price);
+
+                    var row = document.createElement("div");
+                    row.className = "row align-items-center cart-row";
+
+                    var pictureColumn = document.createElement("div");
+                    pictureColumn.className = "col-4 text-center";
+                    var picture = document.createElement("img");
+                    picture.className = "cart-picture";
+                    picture.src = item.image;
+                    picture.alt = item.name;
+                    pictureColumn.appendChild(picture);
+
+                    var priceColumn = document.createElement("div");
+                    priceColumn.className = "col-4 text-center cart-number";
+                    priceColumn.textContent = money(Number(item.price));
+
+                    var totalColumn = document.createElement("div");
+                    totalColumn.className = "col-4 text-center cart-number";
+                    totalColumn.textContent = "Total: " + money(runningTotal);
+
+                    row.appendChild(pictureColumn);
+                    row.appendChild(priceColumn);
+                    row.appendChild(totalColumn);
+                    itemsBox.appendChild(row);
+                });
+            }
+        </script>
+
+    </body>
+</html>
