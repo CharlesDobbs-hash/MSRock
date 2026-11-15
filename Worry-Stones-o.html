@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Worry Stones - MandS Rock</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.typekit.net/puc1zbw.css">
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js"></script>
+    </head>
+
+    <body class="d-flex flex-column min-vh-100">
+
+        <!-- HEADER -->
+        <header>
+            <div class="container-fluid">
+                <div class="row align-items-center text-center">
+                    <div class="col-3">
+                        <img src="Logo%20w%20background%20no%20o%20but%20use.png" alt="M&amp;S Rock logo" class="logo" />
+                    </div>
+                    <div class="col-5">
+                        <div class="site-name">MS Rock</div>
+                        <div class="tagline">Unique Products for Unique People</div>
+                    </div>
+                    <div class="col-2 nav-text">
+                        <a href="login.html">Log in/Sign Up</a>
+                    </div>
+                    <div class="col-2">
+                        <a href="cart.html"><img src="shopping-cart-o.gif" alt="Shopping cart" class="cart" /></a>
+                    </div>
+                </div>
+
+                <nav class="d-flex justify-content-around nav-text pb-1">
+                    <a href="index.html">Home</a>
+                    <a href="About%20Us.html">About Us</a>
+                    <a href="AboutOurProducts.html">About Our Products</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- BODY -->
+        <main class="flex-grow-1 text-center pt-3 pb-4">
+            <h1 class="product-title">Worry Stones</h1>
+            <p class="product-price">$6.00</p>
+
+            <div class="container-fluid mt-4">
+                <div class="row">
+
+                    <!-- Each picture is a button. Clicking it opens the enlarged view (the modal at the bottom of the page). -->
+                    <div class="col-6 col-md mb-3">
+                        <button type="button" class="product-picture-button" data-toggle="modal" data-target="#productModal"
+                                data-id="ws001" data-name="Worry Stone ws001" data-price="6.00" data-image="ws001.gif">
+                            <img src="ws001.gif" alt="Worry Stone ws001" />
+                        </button>
+                    </div>
+                    <div class="col-6 col-md mb-3">
+                        <button type="button" class="product-picture-button" data-toggle="modal" data-target="#productModal"
+                                data-id="ws002" data-name="Worry Stone ws002" data-price="6.00" data-image="ws002.gif">
+                            <img src="ws002.gif" alt="Worry Stone ws002" />
+                        </button>
+                    </div>
+                    <div class="col-6 col-md mb-3">
+                        <button type="button" class="product-picture-button" data-toggle="modal" data-target="#productModal"
+                                data-id="ws003" data-name="Worry Stone ws003" data-price="6.00" data-image="ws003.gif">
+                            <img src="ws003.gif" alt="Worry Stone ws003" />
+                        </button>
+                    </div>
+                    <div class="col-6 col-md mb-3">
+                        <button type="button" class="product-picture-button" data-toggle="modal" data-target="#productModal"
+                                data-id="ws004" data-name="Worry Stone ws004" data-price="6.00" data-image="ws004.gif">
+                            <img src="ws004.gif" alt="Worry Stone ws004" />
+                        </button>
+                    </div>
+                    <div class="col-6 col-md mb-3">
+                        <button type="button" class="product-picture-button" data-toggle="modal" data-target="#productModal"
+                                data-id="ws005" data-name="Worry Stone ws005" data-price="6.00" data-image="ws005.gif">
+                            <img src="ws005.gif" alt="Worry Stone ws005" />
+                        </button>
+                    </div>
+                    <button type="button" onclick="localStorage.removeItem('msrockCart'); location.reload();">Reset cart (testing only)</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- ENLARGED VIEW (opens when a picture is clicked) -->
+        <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-label="Enlarged product picture" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered zoom-dialog" role="document">
+                <div class="modal-content">
+                    <div class="zoom-wrap">
+                        <img id="zoomPicture" src="" alt="" />
+                        <div class="zoom-buttons">
+                            <button type="button" class="btn zoom-button" data-dismiss="modal">Return</button>
+                            <button type="button" class="btn zoom-button" id="addToCart">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container-fluid py-2">
+                <div class="row align-items-center">
+                    <div class="col-md-4 nav-text">
+                        PO Box 116<br />
+                        Circleville, UT 84723<br />
+                        <a href="mailto:msrockut@gmail.com">msrockut@gmail.com</a>
+                    </div>
+                    <div class="col-md-4 text-center">Copyright 2026</div>
+                    <div class="col-md-4 text-md-right social-icons">
+                        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" aria-label="Facebook" class="ml-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="TikTok" class="ml-2"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // The cart is remembered in the visitor's browser under this name.
+            // cart.html will read the same name later.
+            var CART_KEY = "msrockCart";
+
+            var zoomPicture = document.getElementById("zoomPicture");
+            var addButton = document.getElementById("addToCart");
+            var chosen = null; // the picture button that was clicked
+
+            // Reads the cart from the browser (an empty list if there is nothing yet)
+            function getCart() {
+                try {
+                    return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+                } catch (error) {
+                    return [];
+                }
+            }
+
+            // Saves the cart in the browser
+            function saveCart(cart) {
+                try {
+                    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+                } catch (error) {
+                    // Saving is blocked in this browser, so the cart can't be remembered
+                }
+            }
+
+            // True if this product is already in the cart
+            function inCart(id) {
+                return getCart().some(function (item) {
+                    return item.id === id;
+                });
+            }
+
+            // Turns a picture gray and makes it unclickable (the gray look is in styles.css)
+            function grayOut(button) {
+                button.disabled = true;
+            }
+
+            // When the page opens, gray out anything already in the cart
+            document.querySelectorAll(".product-picture-button").forEach(function (button) {
+                if (inCart(button.dataset.id)) {
+                    grayOut(button);
+                }
+            });
+
+            // When a picture is clicked, show it enlarged
+            $("#productModal").on("show.bs.modal", function (event) {
+                chosen = event.relatedTarget;
+                zoomPicture.src = chosen.dataset.image;
+                zoomPicture.alt = chosen.dataset.name;
+            });
+
+            // "Add to cart" button: save the product, gray out the picture, close the enlarged view
+            addButton.addEventListener("click", function () {
+                if (!inCart(chosen.dataset.id)) {
+                    var cart = getCart();
+                    cart.push({
+                        id: chosen.dataset.id,
+                        name: chosen.dataset.name,
+                        price: Number(chosen.dataset.price),
+                        image: chosen.dataset.image
+                    });
+                    saveCart(cart);
+                }
+                grayOut(chosen);
+                $("#productModal").modal("hide");
+            });
+        </script>
+
+    </body>
+</html>
