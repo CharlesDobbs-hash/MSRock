@@ -15,33 +15,39 @@
 
     <body class="d-flex flex-column min-vh-100">
 
-        <!-- HEADER -->
-        <header>
-            <div class="container-fluid">
-                <div class="row align-items-center text-center">
-                    <div class="col-3">
-                        <img src="Logo%20w%20background%20no%20o%20but%20use.png" alt="M&amp;S Rock logo" class="logo" />
-                    </div>
-                    <div class="col-5">
-                        <div class="site-name">M & S Rock</div>
-                        <div class="tagline">Unique Products for Unique People</div>
-                    </div>
-                    <div class="col-2 nav-text">
-                        <a href="login.html">Log in/Sign Up</a>
-                    </div>
-                    <div class="col-2">
-                        <a href="cart.html"><img src="shopping-cart-o.png" alt="Shopping cart" class="cart" /></a>
-                    </div>
-                </div>
-
-                <nav class="d-flex justify-content-around nav-text pb-1">
-                    <a href="index.html">Home</a>
-                    <a href="About Us.html" class="font-weight-bold">About Us</a>
-                    <a href="xAboutOurProducts.html">About Our Products</a>
-                    <a href="contact.html">Contact Us</a>
-                </nav>
+       <header>
+    <div class="container-fluid">
+        <div class="row align-items-center text-center">
+            <div class="col-3">
+                <img src="Logo%20w%20background%20no%20o%20but%20use.png" alt="M&amp;S Rock logo" class="logo" />
             </div>
-        </header>
+            <div class="col-4 col-md-5">
+                <div class="site-name">M &amp; S Rock</div>
+                <div class="tagline">Unique Products for Unique People</div>
+            </div>
+            <div class="col-3 col-md-2 nav-text login-link">
+                <a href="login.html">Log in/Sign Up</a>
+            </div>
+            <div class="col-2">
+                <a href="cart.html"><img src="shopping-cart-o.png" alt="Shopping cart" class="cart" /></a>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-md navbar-dark main-nav px-0 pt-0 pb-1">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav nav-text w-100 justify-content-around">
+                    <li class="nav-item"><a class="nav-link font-weight-bold" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="AboutOurProducts.html">About Our Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
 
         <!-- BODY -->
         <main class="about-page flex-grow-1 pt-3">
