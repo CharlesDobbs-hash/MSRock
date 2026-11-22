@@ -17,38 +17,38 @@
 
         <!-- HEADER -->
         <header>
-    <div class="container-fluid">
-        <div class="row align-items-center text-center">
-            <div class="col-3">
-                <img src="Logo%20w%20background%20no%20o%20but%20use.png" alt="M&amp;S Rock logo" class="logo" />
-            </div>
-            <div class="col-4 col-md-5">
-                <div class="site-name">M &amp; S Rock</div>
-                <div class="tagline">Unique Products for Unique People</div>
-            </div>
-            <div class="col-3 col-md-2 nav-text login-link">
-                <a href="login.html">Log in/Sign Up</a>
-            </div>
-            <div class="col-2">
-                <a href="cart.html"><img src="shopping-cart-o.png" alt="Shopping cart" class="cart" /></a>
-            </div>
-        </div>
+            <div class="container-fluid">
+                <div class="row align-items-center text-center">
+                    <div class="col-3">
+                        <img src="logo.gif" alt="M&amp;S Rock logo" class="logo" />
+                    </div>
+                    <div class="col-4 col-md-5">
+                        <div class="site-name">M &amp; S Rock</div>
+                        <div class="tagline">Unique Products for Unique People</div>
+                    </div>
+                    <div class="col-3 col-md-2 nav-text login-link">
+                        <a href="login.html" class="font-weight-bold">Log in/Sign Up</a>
+                    </div>
+                    <div class="col-2">
+                        <a href="cart.html"><img src="shoppingcart.gif" alt="Shopping cart" class="cart" /></a>
+                    </div>
+                </div>
 
-        <nav class="navbar navbar-expand-md navbar-dark main-nav px-0 pt-0 pb-1">
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainMenu">
-                <ul class="navbar-nav nav-text w-100 justify-content-around">
-                    <li class="nav-item"><a class="nav-link font-weight-bold" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="AboutOurProducts.html">About Our Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                </ul>
+                <nav class="navbar navbar-expand-md navbar-dark main-nav px-0 pt-0 pb-1">
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mainMenu">
+                        <ul class="navbar-nav nav-text w-100 justify-content-around">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="AboutOurProducts.html">About Our Products</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
-        </nav>
-    </div>
-</header>
+        </header>
 
         <!-- BODY -->
         <main class="flex-grow-1 d-flex flex-column">
@@ -56,7 +56,7 @@
                 <div class="row flex-grow-1">
 
                     <!-- Left side: returning customers log in -->
-                    <div class="col-md-6 club-form club-divider py-3">
+                    <div class="col-md-6 club-form club-column club-divider py-3">
                         <h2 class="club-heading">Log In</h2>
 
                         <form id="loginForm" action="#" method="POST">
@@ -66,32 +66,36 @@
                             <label for="loginPassword" class="sr-only">Password</label>
                             <input type="password" id="loginPassword" name="password" class="form-control" placeholder="Password" autocomplete="current-password" required />
 
-                            <img src="theclub.png" alt="The Quarry Rock Club" class="club-picture" />
+                            <img src="theclub.gif" alt="The Quarry Rock Club" class="club-picture" />
 
                             <button type="submit" class="btn club-button">Submit</button>
                         </form>
                     </div>
 
                     <!-- Right side: new customers create an account -->
-                    <div class="col-md-6 club-form py-3">
+                    <div class="col-md-6 club-form club-column py-3">
                         <h2 class="club-heading">Not a member of our rock club?</h2>
                         <p class="club-subheading">It&rsquo;s free and easy to sign up!</p>
 
                         <form id="signupForm" action="welcome.html">
-                            <label for="signupName" class="sr-only">Your Name</label>
-                            <input type="text" id="signupName" name="name" class="form-control" placeholder="Your Name" autocomplete="name" required />
 
-                            <label for="signupEmail" class="sr-only">Email Address</label>
-                            <input type="email" id="signupEmail" name="email" class="form-control" placeholder="Email Address" autocomplete="email" required />
+                            <!-- The five boxes are spread out evenly so the Submit button lines up with the Log In side -->
+                            <div class="club-fields">
+                                <label for="signupName" class="sr-only">Your Name</label>
+                                <input type="text" id="signupName" name="name" class="form-control" placeholder="Your Name" autocomplete="name" required />
 
-                            <label for="signupAddress" class="sr-only">Mailing Address</label>
-                            <input type="text" id="signupAddress" name="address" class="form-control" placeholder="Mailing Address" autocomplete="street-address" required />
+                                <label for="signupEmail" class="sr-only">Email Address</label>
+                                <input type="email" id="signupEmail" name="email" class="form-control" placeholder="Email Address" autocomplete="email" required />
 
-                            <label for="newPassword" class="sr-only">Password</label>
-                            <input type="password" id="newPassword" name="new-password" class="form-control" placeholder="Password" autocomplete="new-password" minlength="8" required />
+                                <label for="signupAddress" class="sr-only">Mailing Address</label>
+                                <input type="text" id="signupAddress" name="address" class="form-control" placeholder="Mailing Address" autocomplete="street-address" required />
 
-                            <label for="repeatPassword" class="sr-only">Repeat Password</label>
-                            <input type="password" id="repeatPassword" name="repeat-password" class="form-control" placeholder="Repeat Password" autocomplete="new-password" required />
+                                <label for="newPassword" class="sr-only">Password</label>
+                                <input type="password" id="newPassword" name="new-password" class="form-control" placeholder="Password" autocomplete="new-password" minlength="8" required />
+
+                                <label for="repeatPassword" class="sr-only">Repeat Password</label>
+                                <input type="password" id="repeatPassword" name="repeat-password" class="form-control" placeholder="Repeat Password" autocomplete="new-password" required />
+                            </div>
 
                             <button type="submit" class="btn club-button">Submit</button>
                         </form>
@@ -153,4 +157,3 @@
 
     </body>
 </html>
-
