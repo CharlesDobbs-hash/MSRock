@@ -16,39 +16,39 @@
     <body class="d-flex flex-column min-vh-100">
 
         <!-- HEADER -->
-     <header>
-    <div class="container-fluid">
-        <div class="row align-items-center text-center">
-            <div class="col-3">
-                <img src="Logo%20w%20background%20no%20o%20but%20use.png" alt="M&amp;S Rock logo" class="logo" />
-            </div>
-            <div class="col-4 col-md-5">
-                <div class="site-name">M &amp; S Rock</div>
-                <div class="tagline">Unique Products for Unique People</div>
-            </div>
-            <div class="col-3 col-md-2 nav-text login-link">
-                <a href="login.html">Log in/Sign Up</a>
-            </div>
-            <div class="col-2">
-                <a href="cart.html"><img src="shopping-cart-o.png" alt="Shopping cart" class="cart" /></a>
-            </div>
-        </div>
+        <header>
+            <div class="container-fluid">
+                <div class="row align-items-center text-center">
+                    <div class="col-3">
+                        <img src="logo.gif" alt="M&amp;S Rock logo" class="logo" />
+                    </div>
+                    <div class="col-4 col-md-5">
+                        <div class="site-name">M &amp; S Rock</div>
+                        <div class="tagline">Unique Products for Unique People</div>
+                    </div>
+                    <div class="col-3 col-md-2 nav-text login-link">
+                        <a href="login.html">Log in/Sign Up</a>
+                    </div>
+                    <div class="col-2">
+                        <a href="cart.html"><img src="shoppingcart.gif" alt="Shopping cart" class="cart" /></a>
+                    </div>
+                </div>
 
-        <nav class="navbar navbar-expand-md navbar-dark main-nav px-0 pt-0 pb-1">
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainMenu">
-                <ul class="navbar-nav nav-text w-100 justify-content-around">
-                    <li class="nav-item"><a class="nav-link font-weight-bold" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="AboutOurProducts.html">About Our Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                </ul>
+                <nav class="navbar navbar-expand-md navbar-dark main-nav px-0 pt-0 pb-1">
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mainMenu">
+                        <ul class="navbar-nav nav-text w-100 justify-content-around">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="AboutOurProducts.html">About Our Products</a></li>
+                            <li class="nav-item"><a class="nav-link font-weight-bold" href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
-        </nav>
-    </div>
-</header>
+        </header>
 
         <!-- BODY -->
         <main class="flex-grow-1 py-4">
@@ -66,19 +66,24 @@
                             Have a Question? Send us a message and we&rsquo;ll get back to you within 24 hours.
                         </h2>
 
-                        <!-- Replace the action address below with your form service's address (see notes) -->
-                        <form action="mailto:msrockut@gmail.com/f/YOUR_FORM_ID" method="POST">
+                        <form id="contactForm">
 
-                            <label for="name" class="sr-only">Your Name</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required />
+                            <label for="contactName" class="sr-only">Your Name</label>
+                            <input type="text" id="contactName" class="form-control" placeholder="Your Name" autocomplete="name" required />
 
-                            <label for="email" class="sr-only">Your Email Address</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="Your Email Address" required />
+                            <label for="contactEmail" class="sr-only">Your Email Address</label>
+                            <input type="email" id="contactEmail" class="form-control" placeholder="Your Email Address" autocomplete="email" required />
 
-                            <label for="message" class="sr-only">Your Message</label>
-                            <textarea id="message" name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                            <label for="contactMessage" class="sr-only">Your Message</label>
+                            <textarea id="contactMessage" class="form-control" rows="4" placeholder="Your Message" required></textarea>
 
-                            <button type="submit" class="btn contact-button">Send Message</button>
+                            <!-- Hidden trap for spam programs: real visitors never see or fill this in -->
+                            <input type="text" id="contactTrap" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px;" />
+
+                            <button type="submit" id="sendMessage" class="btn contact-button">Send Message</button>
+
+                            <!-- Shows "message sent" or an error message -->
+                            <div id="contactStatus" class="alert mt-4" role="status" hidden></div>
                         </form>
                     </div>
 
@@ -109,6 +114,74 @@
                 </div>
             </div>
         </footer>
+
+        <!-- EmailJS: the service that sends the message to msrockut@gmail.com -->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js"></script>
+
+        <script>
+            // ---------- SETTINGS (fill these in after setting up EmailJS) ----------
+            // The public key and service ID are the same ones used on checkout.html.
+            // The template ID is for a second, separate template for contact messages.
+            var EMAILJS_PUBLIC_KEY = "i-iPjJ4EDzC7HDd8r";
+            var EMAILJS_SERVICE_ID = "service_atv5ra8";
+            var EMAILJS_CONTACT_TEMPLATE_ID = "template_vvqqyzd";
+
+            var contactForm = document.getElementById("contactForm");
+            var sendButton = document.getElementById("sendMessage");
+            var statusBox = document.getElementById("contactStatus");
+
+            // Shows a green (good) or red (problem) message under the button
+            function showStatus(message, isGood) {
+                statusBox.textContent = message;
+                statusBox.className = "alert mt-4 " + (isGood ? "alert-success" : "alert-danger");
+                statusBox.hidden = false;
+            }
+
+            contactForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+                statusBox.hidden = true;
+
+                // If the hidden trap box was filled in, it was a spam program: pretend it worked and do nothing
+                if (document.getElementById("contactTrap").value !== "") {
+                    return;
+                }
+
+                if (EMAILJS_PUBLIC_KEY === "YOUR_PUBLIC_KEY") {
+                    showStatus("The contact form has not been set up yet, so this message was not sent.", false);
+                    return;
+                }
+                if (typeof emailjs === "undefined") {
+                    showStatus("The message could not be sent right now. Please check your internet connection and try again.", false);
+                    return;
+                }
+
+                sendButton.disabled = true;
+                sendButton.textContent = "Sending...";
+
+                emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+                // These names must match the {{names}} in your EmailJS template
+                var messageDetails = {
+                    from_name: document.getElementById("contactName").value,
+                    from_email: document.getElementById("contactEmail").value,
+                    message: document.getElementById("contactMessage").value
+                };
+
+                emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_CONTACT_TEMPLATE_ID, messageDetails).then(
+                    function () {
+                        showStatus("Thank you! Your message has been sent. We will get back to you within 24 hours.", true);
+                        contactForm.reset();
+                        sendButton.disabled = false;
+                        sendButton.textContent = "Send Message";
+                    },
+                    function () {
+                        showStatus("Sorry, your message could not be sent. Please try again, or email us at msrockut@gmail.com.", false);
+                        sendButton.disabled = false;
+                        sendButton.textContent = "Send Message";
+                    }
+                );
+            });
+        </script>
 
     </body>
 </html>
