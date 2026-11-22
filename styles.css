@@ -191,11 +191,27 @@ main {
 /* Text blocks: Arial, left aligned, with a white glow so they read well over the pattern */
 .product-text {
     font-family: Arial, sans-serif;
-    font-size: 1.75rem;
+    font-size: 1.875rem;
     text-align: left;
     text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff;
 }
+/* "Our Story" heading */
+.story-heading {
+    font-family: Arial, sans-serif;
+    font-size: 2.25rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff;
+}
 
+/* Workshop picture: bigger than before, centered in its column */
+.workshop-pic {
+    display: block;
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto;
+}
 /* Video placeholder box */
 .video-placeholder {
     background-color: rgba(255, 255, 255, 0.8);
