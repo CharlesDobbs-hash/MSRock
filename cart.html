@@ -16,39 +16,40 @@
     <body class="d-flex flex-column min-vh-100">
 
         <!-- HEADER -->
-       <header>
-    <div class="container-fluid">
-        <div class="row align-items-center text-center">
-            <div class="col-3">
-                <img src="Logo%20w%20background%20no%20o%20but%20use.png" alt="M&amp;S Rock logo" class="logo" />
-            </div>
-            <div class="col-4 col-md-5">
-                <div class="site-name">M &amp; S Rock</div>
-                <div class="tagline">Unique Products for Unique People</div>
-            </div>
-            <div class="col-3 col-md-2 nav-text login-link">
-                <a href="login.html">Log in/Sign Up</a>
-            </div>
-            <div class="col-2">
-                <a href="cart.html"><img src="shopping-cart-o.png" alt="Shopping cart" class="cart" /></a>
-            </div>
-        </div>
+        <header>
+            <div class="container-fluid">
+                <div class="row align-items-center text-center">
+                    <div class="col-3">
+                        <img src="logo.gif" alt="M&amp;S Rock logo" class="logo" />
+                    </div>
+                    <div class="col-4 col-md-5">
+                        <div class="site-name">M &amp; S Rock</div>
+                        <div class="tagline">Unique Products for Unique People</div>
+                    </div>
+                    <div class="col-3 col-md-2 nav-text login-link">
+                        <a href="login.html">Log in/Sign Up</a>
+                    </div>
+                    <div class="col-2">
+                        <!-- On this page the cart picture is the gold version -->
+                        <a href="cart.html"><img src="shopping-cart-gold.gif" alt="Shopping cart (you are here)" class="cart" /></a>
+                    </div>
+                </div>
 
-        <nav class="navbar navbar-expand-md navbar-dark main-nav px-0 pt-0 pb-1">
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainMenu">
-                <ul class="navbar-nav nav-text w-100 justify-content-around">
-                    <li class="nav-item"><a class="nav-link font-weight-bold" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="AboutOurProducts.html">About Our Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                </ul>
+                <nav class="navbar navbar-expand-md navbar-dark main-nav px-0 pt-0 pb-1">
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mainMenu">
+                        <ul class="navbar-nav nav-text w-100 justify-content-around">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="AboutOurProducts.html">About Our Products</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
-        </nav>
-    </div>
-</header>
+        </header>
 
         <!-- BODY: the page grows taller as items are added, and the browser's scroll bar appears on the right edge -->
         <main class="flex-grow-1 d-flex flex-column pt-4 pb-3">
@@ -59,7 +60,7 @@
                 <p id="cartEmpty" class="cart-empty" hidden>Your cart is empty.</p>
 
                 <!-- Picture of the rock couple shopping, centered below the items -->
-                <img src="Cart-Pic.gif" alt="Rock guy and rock girl carrying shopping bags" class="cart-pic" />
+                <img src="guygirlshopping.gif" alt="Rock guy and rock girl carrying shopping bags" class="cart-pic" />
             </div>
 
             <div class="text-center mt-3">
@@ -88,7 +89,7 @@
         </footer>
 
         <script>
-            // The cart is read from the same place the product pages saved it
+            // The cart is read from (and saved to) the same place the product pages use
             var CART_KEY = "msrockCart";
 
             function getCart() {
@@ -99,22 +100,51 @@
                 }
             }
 
+            function saveCart(cart) {
+                try {
+                    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+                } catch (error) {
+                    // Saving is blocked in this browser
+                }
+            }
+
             // Turns a number like 12 into "$12.00"
             function money(amount) {
                 return "$" + amount.toFixed(2);
             }
 
-            var cart = getCart();
             var itemsBox = document.getElementById("cartItems");
-            var runningTotal = 0;
+            var emptyMessage = document.getElementById("cartEmpty");
+            var checkoutButton = document.getElementById("checkoutButton");
 
-            if (cart.length === 0) {
-                // Nothing in the cart yet: show the message and keep the checkout button hidden
-                document.getElementById("cartEmpty").hidden = false;
-            } else {
-                document.getElementById("checkoutButton").hidden = false;
+            // "Remove from Cart": take the item out of the saved cart, then redraw the page.
+            // The product page checks the saved cart when it opens, so the picture there goes back to normal.
+            function removeItem(id) {
+                var remaining = getCart().filter(function (item) {
+                    return item.id !== id;
+                });
+                saveCart(remaining);
+                showCart();
+            }
 
-                // One row per item: picture on the left, price in the middle, running total on the right
+            // Draws the whole cart: one row per item, with the running total
+            function showCart() {
+                var cart = getCart();
+                var runningTotal = 0;
+
+                itemsBox.textContent = "";
+
+                if (cart.length === 0) {
+                    // Nothing in the cart: show the message and hide the checkout button
+                    emptyMessage.hidden = false;
+                    checkoutButton.hidden = true;
+                    return;
+                }
+
+                emptyMessage.hidden = true;
+                checkoutButton.hidden = false;
+
+                // One row per item: picture and Remove button on the left, price in the middle, running total on the right
                 cart.forEach(function (item) {
                     runningTotal += Number(item.price);
 
@@ -122,12 +152,24 @@
                     row.className = "row align-items-center cart-row";
 
                     var pictureColumn = document.createElement("div");
-                    pictureColumn.className = "col-4 text-center";
+                    pictureColumn.className = "col-4 cart-item-cell";
+
                     var picture = document.createElement("img");
                     picture.className = "cart-picture";
                     picture.src = item.image;
                     picture.alt = item.name;
+
+                    var removeButton = document.createElement("button");
+                    removeButton.type = "button";
+                    removeButton.className = "btn remove-button";
+                    removeButton.textContent = "Remove from Cart";
+                    removeButton.setAttribute("aria-label", "Remove " + item.name + " from cart");
+                    removeButton.addEventListener("click", function () {
+                        removeItem(item.id);
+                    });
+
                     pictureColumn.appendChild(picture);
+                    pictureColumn.appendChild(removeButton);
 
                     var priceColumn = document.createElement("div");
                     priceColumn.className = "col-4 text-center cart-number";
@@ -143,6 +185,8 @@
                     itemsBox.appendChild(row);
                 });
             }
+
+            showCart();
         </script>
 
     </body>
