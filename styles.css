@@ -735,3 +735,55 @@ main {
         font-size: 1.5rem;
     }
 }
+/* Log In / Sign Up: both sides stretch to the same height so the Submit buttons line up */
+.club-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.club-column form {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* The sign-up boxes spread out evenly between the heading and the Submit button */
+.club-fields {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Submit button sits at the bottom of each side */
+.club-column .club-button {
+    align-self: center;
+    margin-top: auto;
+}
+/* Picture and "Remove from Cart" button side by side in the cart */
+.cart-item-cell {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-item-cell .cart-picture {
+    margin-right: 1rem;
+}
+
+.remove-button {
+    background-color: #ffffff;
+    border: 2px solid #4870D5;
+    border-radius: 25px;
+    color: #4870D5;
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+    padding: 0.25rem 1rem;
+}
+
+.remove-button:hover {
+    background-color: #4870D5;
+    color: #ffffff;
+}
