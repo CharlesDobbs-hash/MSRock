@@ -308,7 +308,7 @@
                 orderError.hidden = false;
             }
 
-            // "Place Order" button: send the order email, then go to orderplaced.html
+            // "Place Order" button: send the order email, then go to done.html
             orderForm.addEventListener("submit", function (event) {
                 event.preventDefault();
                 orderError.hidden = true;
@@ -347,7 +347,7 @@
                         } catch (error) {
                             // The cart could not be cleared; the order was still sent
                         }
-                        window.location.href = "orderplaced.html";
+                        window.location.href = "done.html";
                     },
                     function () {
                         showError("Sorry, your order could not be sent. Please try again, or email us at msrockut@gmail.com.");
