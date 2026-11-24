@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Checkout - MandS Rock</title>
+        <title>Log In / Sign Up - MandS Rock</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -16,88 +16,91 @@
     <body class="d-flex flex-column min-vh-100">
 
         <!-- HEADER -->
-       <header>
-    <div class="container-fluid">
-        <div class="row align-items-center text-center">
-            <div class="col-3">
-                <img src="Logo%20w%20background%20no%20o%20but%20use.png" alt="M&amp;S Rock logo" class="logo" />
-            </div>
-            <div class="col-4 col-md-5">
-                <div class="site-name">M &amp; S Rock</div>
-                <div class="tagline">Unique Products for Unique People</div>
-            </div>
-            <div class="col-3 col-md-2 nav-text login-link">
-                <a href="login.html">Log in/Sign Up</a>
-            </div>
-            <div class="col-2">
-                <a href="cart.html"><img src="shopping-cart-o.png" alt="Shopping cart" class="cart" /></a>
-            </div>
-        </div>
-
-        <nav class="navbar navbar-expand-md navbar-dark main-nav px-0 pt-0 pb-1">
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainMenu">
-                <ul class="navbar-nav nav-text w-100 justify-content-around">
-                    <li class="nav-item"><a class="nav-link font-weight-bold" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="AboutOurProducts.html">About Our Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</header>
-        <!-- BODY: the page grows taller as needed, and the browser's scroll bar appears on the right edge -->
-        <main class="checkout-page flex-grow-1 pt-4 pb-4">
-
-            <!-- Shipping department picture: upper right corner on large screens, at the top on small ones -->
-            <img src="Shipping.gif" alt="Rock guy and rock girl in the shipping department" class="shipping-pic" />
-
+        <header>
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-8 checkout-text">
-
-                        <!-- Shown if the visitor gets here with nothing in the cart -->
-                        <div id="emptyMessage" hidden>
-                            <h1 class="checkout-heading">Your cart is empty</h1>
-                            <p><a href="index.html">Keep shopping</a></p>
-                        </div>
-
-                        <!-- The order form: items, charges, customer information, and the Place Order button -->
-                        <form id="orderForm">
-                            <h1 class="checkout-heading">Your Order</h1>
-
-                            <!-- The items are added here by the script at the bottom of the page -->
-                            <div id="orderItems"></div>
-
-                            <!-- Subtotal, shipping and handling (placeholder), and total -->
-                            <div class="checkout-line"><span>Subtotal</span><span id="subtotalAmount"></span></div>
-                            <div class="checkout-line"><span>Shipping and handling</span><span id="shippingAmount"></span></div>
-                            <div class="checkout-line checkout-line-total"><span>Order total</span><span id="totalAmount"></span></div>
-
-                            <h2 class="checkout-subheading">Where should we send it?</h2>
-
-                            <div class="club-form checkout-fields">
-                                <label for="customerName" class="sr-only">Your Name</label>
-                                <input type="text" id="customerName" class="form-control" placeholder="Your Name" autocomplete="name" required />
-
-                                <label for="customerEmail" class="sr-only">Email Address</label>
-                                <input type="email" id="customerEmail" class="form-control" placeholder="Email Address" autocomplete="email" required />
-
-                                <label for="customerAddress" class="sr-only">Mailing Address</label>
-                                <input type="text" id="customerAddress" class="form-control" placeholder="Mailing Address" autocomplete="street-address" required />
-                            </div>
-
-                            <div id="orderError" class="alert alert-danger" role="alert" hidden></div>
-
-                            <div class="text-center mt-4">
-                                <button type="submit" id="placeOrder" class="btn checkout-button">Place Order</button>
-                            </div>
-                        </form>
-
+                <div class="row align-items-center text-center">
+                    <div class="col-3">
+                        <img src="logo.gif" alt="M&amp;S Rock logo" class="logo" />
                     </div>
+                    <div class="col-4 col-md-5">
+                        <div class="site-name">M &amp; S Rock</div>
+                        <div class="tagline">Unique Products for Unique People</div>
+                    </div>
+                    <div class="col-3 col-md-2 nav-text login-link">
+                        <a href="login.html" class="font-weight-bold">Log in/Sign Up</a>
+                    </div>
+                    <div class="col-2">
+                        <a href="cart.html"><img src="shoppingcart.gif" alt="Shopping cart" class="cart" /></a>
+                    </div>
+                </div>
+
+                <nav class="navbar navbar-expand-md navbar-dark main-nav px-0 pt-0 pb-1">
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mainMenu">
+                        <ul class="navbar-nav nav-text w-100 justify-content-around">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="AboutOurProducts.html">About Our Products</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- BODY -->
+        <main class="flex-grow-1 d-flex flex-column">
+            <div class="container-fluid flex-grow-1 d-flex flex-column">
+                <div class="row flex-grow-1">
+
+                    <!-- Left side: returning customers log in -->
+                    <div class="col-md-6 club-form club-column club-divider py-3">
+                        <h2 class="club-heading">Log In</h2>
+
+                        <form id="loginForm" action="#" method="POST">
+                            <label for="loginEmail" class="sr-only">Email Address</label>
+                            <input type="email" id="loginEmail" name="email" class="form-control" placeholder="Email Address" autocomplete="email" required />
+
+                            <label for="loginPassword" class="sr-only">Password</label>
+                            <input type="password" id="loginPassword" name="password" class="form-control" placeholder="Password" autocomplete="current-password" required />
+
+                            <img src="theclub.gif" alt="The Quarry Rock Club" class="club-picture" />
+
+                            <button type="submit" class="btn club-button">Submit</button>
+                        </form>
+                    </div>
+
+                    <!-- Right side: new customers create an account -->
+                    <div class="col-md-6 club-form club-column py-3">
+                        <h2 class="club-heading">Not a member of our rock club?</h2>
+                        <p class="club-subheading">It&rsquo;s free and easy to sign up!</p>
+
+                        <form id="signupForm" action="welcome.html">
+
+                            <!-- The five boxes are spread out evenly so the Submit button lines up with the Log In side -->
+                            <div class="club-fields">
+                                <label for="signupName" class="sr-only">Your Name</label>
+                                <input type="text" id="signupName" name="name" class="form-control" placeholder="Your Name" autocomplete="name" required />
+
+                                <label for="signupEmail" class="sr-only">Email Address</label>
+                                <input type="email" id="signupEmail" name="email" class="form-control" placeholder="Email Address" autocomplete="email" required />
+
+                                <label for="signupAddress" class="sr-only">Mailing Address</label>
+                                <input type="text" id="signupAddress" name="address" class="form-control" placeholder="Mailing Address" autocomplete="street-address" required />
+
+                                <label for="newPassword" class="sr-only">Password</label>
+                                <input type="password" id="newPassword" name="new-password" class="form-control" placeholder="Password" autocomplete="new-password" minlength="8" required />
+
+                                <label for="repeatPassword" class="sr-only">Repeat Password</label>
+                                <input type="password" id="repeatPassword" name="repeat-password" class="form-control" placeholder="Repeat Password" autocomplete="new-password" required />
+                            </div>
+
+                            <button type="submit" class="btn club-button">Submit</button>
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </main>
@@ -121,179 +124,47 @@
             </div>
         </footer>
 
-        <!-- EmailJS: the service that sends the order emails -->
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js"></script>
-
         <script>
-            // ---------- SETTINGS (fill these in after setting up EmailJS) ----------
-            var EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";
-            var EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";
-            var EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+            // ----- Sign-up form -----
+            var signupForm = document.getElementById("signupForm");
+            var newPassword = document.getElementById("newPassword");
+            var repeatPassword = document.getElementById("repeatPassword");
 
-            // Placeholder for the shipping and handling charge. Change the number when you decide on a charge.
-            var SHIPPING_AND_HANDLING = 0;
-
-            // The cart is read from the same place the product pages saved it
-            var CART_KEY = "msrockCart";
-
-            // ---------- Helpers ----------
-            function getCart() {
-                try {
-                    return JSON.parse(localStorage.getItem(CART_KEY)) || [];
-                } catch (error) {
-                    return [];
+            // Checks that the two passwords match
+            function checkPasswords() {
+                if (repeatPassword.value !== newPassword.value) {
+                    repeatPassword.setCustomValidity("The passwords do not match.");
+                } else {
+                    repeatPassword.setCustomValidity("");
                 }
             }
+            newPassword.addEventListener("input", checkPasswords);
+            repeatPassword.addEventListener("input", checkPasswords);
 
-            // Turns a number like 12 into "$12.00"
-            function money(amount) {
-                return "$" + amount.toFixed(2);
-            }
+            // When every box is filled in correctly and Submit is clicked, go to the welcome page.
+            // (No account is created yet. That needs an account system, which we will add later.)
+            signupForm.addEventListener("submit", function (event) {
+                event.preventDefault();
 
-            // Makes text safe to put inside the order email
-            function escapeHtml(text) {
-                return String(text)
-                    .replace(/&/g, "&amp;")
-                    .replace(/</g, "&lt;")
-                    .replace(/>/g, "&gt;")
-                    .replace(/"/g, "&quot;")
-                    .replace(/'/g, "&#39;");
-            }
+                // Remember the name, email and mailing address in this browser so the checkout page can fill them in.
+                // The password is never saved.
+                try {
+                    localStorage.setItem("msrockCustomer", JSON.stringify({
+                        name: document.getElementById("signupName").value,
+                        email: document.getElementById("signupEmail").value,
+                        address: document.getElementById("signupAddress").value
+                    }));
+                } catch (error) {
+                    // Saving is blocked in this browser; the visitor can still type their details at checkout
+                }
 
-            // ---------- Show the order on the page ----------
-            var cart = getCart();
-            var subtotal = 0;
-
-            cart.forEach(function (item) {
-                subtotal += Number(item.price);
+                window.location.href = "welcome.html";
             });
 
-            var total = subtotal + SHIPPING_AND_HANDLING;
-
-            if (cart.length === 0) {
-                document.getElementById("orderForm").hidden = true;
-                document.getElementById("emptyMessage").hidden = false;
-            } else {
-                var itemsBox = document.getElementById("orderItems");
-
-                // One row per item: picture, code and name, price
-                cart.forEach(function (item) {
-                    var row = document.createElement("div");
-                    row.className = "row align-items-center checkout-row";
-
-                    var pictureColumn = document.createElement("div");
-                    pictureColumn.className = "col-3";
-                    var picture = document.createElement("img");
-                    picture.className = "checkout-picture";
-                    picture.src = item.image;
-                    picture.alt = item.name;
-                    pictureColumn.appendChild(picture);
-
-                    var nameColumn = document.createElement("div");
-                    nameColumn.className = "col-6";
-                    var code = document.createElement("strong");
-                    code.textContent = String(item.id).toUpperCase();
-                    nameColumn.appendChild(code);
-                    nameColumn.appendChild(document.createElement("br"));
-                    nameColumn.appendChild(document.createTextNode(item.name));
-
-                    var priceColumn = document.createElement("div");
-                    priceColumn.className = "col-3 text-right";
-                    priceColumn.textContent = money(Number(item.price));
-
-                    row.appendChild(pictureColumn);
-                    row.appendChild(nameColumn);
-                    row.appendChild(priceColumn);
-                    itemsBox.appendChild(row);
-                });
-
-                document.getElementById("subtotalAmount").textContent = money(subtotal);
-                document.getElementById("shippingAmount").textContent = money(SHIPPING_AND_HANDLING);
-                document.getElementById("totalAmount").textContent = money(total);
-            }
-
-            // ---------- The order email ----------
-
-            // Builds the table of items (with a picture of each product) that goes into the email
-            function buildOrderHtml() {
-                var cellStyle = "padding:6px;border-bottom:1px solid #cccccc;";
-                var html = '<table style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:16px;">';
-                html += '<tr>'
-                      + '<th style="text-align:left;padding:6px;border-bottom:2px solid #4870D5;">Picture</th>'
-                      + '<th style="text-align:left;padding:6px;border-bottom:2px solid #4870D5;">Product</th>'
-                      + '<th style="text-align:right;padding:6px;border-bottom:2px solid #4870D5;">Price</th>'
-                      + '</tr>';
-
-                cart.forEach(function (item) {
-                    // The email needs the full web address of each picture
-                    var pictureUrl = new URL(item.image, window.location.href).href;
-                    html += '<tr>'
-                          + '<td style="' + cellStyle + '"><img src="' + escapeHtml(pictureUrl) + '" width="120" alt="' + escapeHtml(item.name) + '"></td>'
-                          + '<td style="' + cellStyle + '"><strong>' + escapeHtml(String(item.id).toUpperCase()) + '</strong><br>' + escapeHtml(item.name) + '</td>'
-                          + '<td style="' + cellStyle + 'text-align:right;">' + money(Number(item.price)) + '</td>'
-                          + '</tr>';
-                });
-
-                html += '</table>';
-                return html;
-            }
-
-            var orderForm = document.getElementById("orderForm");
-            var placeButton = document.getElementById("placeOrder");
-            var orderError = document.getElementById("orderError");
-
-            function showError(message) {
-                orderError.textContent = message;
-                orderError.hidden = false;
-            }
-
-            // "Place Order" button: send the order email, then go to orderplaced.html
-            orderForm.addEventListener("submit", function (event) {
+            // ----- Log in form -----
+            // Not connected to an account system yet, so Submit does nothing for now.
+            document.getElementById("loginForm").addEventListener("submit", function (event) {
                 event.preventDefault();
-                orderError.hidden = true;
-
-                if (EMAILJS_PUBLIC_KEY === "YOUR_PUBLIC_KEY") {
-                    showError("The order email has not been set up yet, so this order was not sent.");
-                    return;
-                }
-                if (typeof emailjs === "undefined") {
-                    showError("The order could not be sent right now. Please check your internet connection and try again.");
-                    return;
-                }
-
-                placeButton.disabled = true;
-                placeButton.textContent = "Sending...";
-
-                emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-
-                // These names must match the {{names}} in your EmailJS template
-                var orderDetails = {
-                    order_number: "MS-" + Date.now(),
-                    customer_name: document.getElementById("customerName").value,
-                    customer_email: document.getElementById("customerEmail").value,
-                    customer_address: document.getElementById("customerAddress").value,
-                    order_html: buildOrderHtml(),
-                    subtotal: money(subtotal),
-                    shipping: money(SHIPPING_AND_HANDLING),
-                    total: money(total)
-                };
-
-                emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, orderDetails).then(
-                    function () {
-                        // The order was sent: empty the cart and go to the thank-you page
-                        try {
-                            localStorage.removeItem(CART_KEY);
-                        } catch (error) {
-                            // The cart could not be cleared; the order was still sent
-                        }
-                        window.location.href = "orderplaced.html";
-                    },
-                    function () {
-                        showError("Sorry, your order could not be sent. Please try again, or email us at msrockut@gmail.com.");
-                        placeButton.disabled = false;
-                        placeButton.textContent = "Place Order";
-                    }
-                );
             });
         </script>
 
