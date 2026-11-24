@@ -787,3 +787,34 @@ main {
     background-color: #4870D5;
     color: #ffffff;
 }
+/* Return to Cart button */
+.return-button {
+    background-color: #ffffff;
+    border: 2px solid #4870D5;
+    border-radius: 25px;
+    color: #4870D5;
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    padding: 0.3rem 2rem;
+}
+
+.return-button:hover {
+    background-color: #4870D5;
+    color: #ffffff;
+}
+
+/* Space around the two buttons at the bottom of the checkout page */
+.checkout-buttons .btn {
+    margin: 0.5rem;
+}
+
+/* Small helper notes ("We filled this in...", "Card payment will be added here.") */
+.checkout-note {
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+}
+
+/* The switched-off payment boxes look a little faded */
+.payment-area .form-control:disabled {
+    opacity: 0.6;
+}
