@@ -816,13 +816,13 @@ main {
 * ----- Drop shadow on all the rock couple pictures ----- */
 /* drop-shadow(right  down  blur  color)  -- change the numbers to taste */
 .rockguywaving.gif,
-.rock-girl,
+.rockgirlwaving.gif,
 .rock-couple,
 .welcome-picture,
 .cart-pic,
 .done-picture,
 .club-picture {
-    filter: drop-shadow(20px 50px 50px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow 40px 50px 10px rgba(0, 0, 0, 0.4));
 }
 
 /* The switched-off payment boxes look a little faded */
