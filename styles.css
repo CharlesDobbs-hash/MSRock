@@ -813,17 +813,7 @@ main {
     font-family: Arial, sans-serif;
     font-size: 1.1rem;
 }
-* ----- Drop shadow on all the rock couple pictures ----- */
-/* drop-shadow(right  down  blur  color)  -- change the numbers to taste */
-.rockguywaving.gif,
-.rockgirlwaving.gif,
-.rock-couple,
-.welcome-picture,
-.cart-pic,
-.done-picture,
-.club-picture {
-    filter: drop-shadow 40px 50px 10px rgba(0, 0, 0, 0.4));
-}
+
 
 /* The switched-off payment boxes look a little faded */
 .payment-area .form-control:disabled {
