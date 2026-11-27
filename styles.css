@@ -822,7 +822,7 @@ main {
 .cart-pic,
 .done-picture,
 .club-picture {
-    filter: drop-shadow(8px 10px 10px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(20px 50px 50px rgba(0, 0, 0, 0.4));
 }
 
 /* The switched-off payment boxes look a little faded */
